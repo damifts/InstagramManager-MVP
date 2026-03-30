@@ -1,5 +1,5 @@
 [project]
-name = "socialmanager-mvp"
+name = "instagram-manager-mvp"
 version = "0.2.0"
 description = "MVP frontend/backend per gestione social"
 readme = "README.md"

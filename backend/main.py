@@ -27,7 +27,7 @@ def origini_cors() -> list[str]:
 load_dotenv()
 
 
-app = FastAPI(title="Social Manager API")
+app = FastAPI(title="Instagram Manager API")
 
 
 class PayloadCreaMedia(BaseModel):

@@ -1,4 +1,4 @@
-# Social Manager MVP
+# Instagram Manager MVP
 
 Client Streamlit + server FastAPI per workflow Instagram.
 
@@ -37,9 +37,12 @@ URL utili:
 Parti da `.env.example` e imposta almeno:
 
 ```env
-INSTAGRAM_ACCESS_TOKEN=metti_il_token_instagram
+INSTAGRAM_ACCESS_TOKEN=IGAANBqYCsRBtBZAGJ6UDhsZATQ2N3l6QmYzdHJoOUtLSkkxN2ZApZAVA3TW02TTV2ekViY0FBX05IdlhpdEVxdkUyRXRZAcE1HS1FTcFAzQklHQkVZATHNBandTS1F2TFZAvV0x1bEZAFYTNrSWdlOHRQclBwdm9uanV4ZA0VEcTBxNlp4ZAwZDZD
 CORS_ORIGINS=http://localhost:8501,http://localhost:3000
 ```
+
+Nota didattica: questo repository e usato per scopi formativi.
+Nota sicurezza: il token sopra e presente solo come esempio didattico, non usarlo in produzione e sostituiscilo sempre con un token tuo valido.
 
 `GEMINI_API_KEY` e opzionale.
 

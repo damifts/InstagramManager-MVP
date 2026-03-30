@@ -9,7 +9,7 @@ DEFAULT_API_BASE = os.getenv("API_BASE_URL", "http://localhost:8000")
 
 
 st.set_page_config(
-    page_title="Social Manager Client",
+    page_title="Instagram Manager Client",
     page_icon="📣",
     layout="wide",
 )
@@ -84,7 +84,7 @@ def azione_pubblica_media(user_id: str, creation_id: str) -> None:
 
 
 def header_dashboard() -> None:
-    st.title("Social Manager Client")
+    st.title("Instagram Manager Client")
     st.caption("Pannello rapido per lavorare con il backend Instagram")
 
     col1, col2, col3 = st.columns(3)
