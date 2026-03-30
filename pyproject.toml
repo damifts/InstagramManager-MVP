@@ -1,0 +1,16 @@
+[project]
+name = "socialmanager-mvp"
+version = "0.2.0"
+description = "MVP frontend/backend per gestione social"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi==0.115.0",
+    "uvicorn[standard]==0.30.6",
+    "httpx==0.27.2",
+    "streamlit==1.40.2",
+    "python-dotenv==1.0.1",
+]
+
+[tool.uv]
+package = false

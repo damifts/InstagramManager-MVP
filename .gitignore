@@ -1,41 +1,31 @@
-# Python
+# Python / uv
 .venv/
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.python-version
 
-# Streamlit
-.streamlit/secrets.toml
+# uv lock file (commit only if you want fully pinned reproducible installs)
+# uv.lock
 
-# Node (deprecato - rimuovere cartelle manualmente)
-node_modules/
-.npm/
-.npmrc
-frontend/
-package.json
-package-lock.json
-
-# Next.js (deprecato)
-.next/
-out/
-
-# Env
+# Environment
 .env
 .env.local
 .env.*.local
 
+# Streamlit secrets
+.streamlit/secrets.toml
+
 # Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 *.log
 
 # OS
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# VS Code
+# VS Code user-only files
 .vscode/settings.json
 .vscode/launch.json

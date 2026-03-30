@@ -1,5 +1,0 @@
-# Base dependencies (recommended)
--r requirements-base.txt
-
-# Optional extras (AI/analytics)
-# -r requirements-full.txt
