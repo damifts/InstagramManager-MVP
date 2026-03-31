@@ -9,6 +9,8 @@ dependencies = [
     "uvicorn[standard]==0.30.6",
     "httpx==0.27.2",
     "streamlit==1.40.2",
+    "streamlit-antd-components==0.3.2",
+    "google-generativeai==0.8.5",
     "python-dotenv==1.0.1",
 ]
 

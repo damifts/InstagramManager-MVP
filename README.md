@@ -18,13 +18,13 @@ uv sync
 Backend:
 
 ```cmd
-uv run uvicorn main:app --reload --host 0.0.0.0 --port 8000 --app-dir backend
+uv run python -m uvicorn main:app --app-dir backend --reload --reload-dir backend --host 127.0.0.1 --port 8000
 ```
 
 Frontend (secondo terminale):
 
 ```cmd
-uv run streamlit run frontend\app.py
+uv run python -m streamlit run frontend\app.py
 ```
 
 URL utili:
@@ -35,6 +35,10 @@ URL utili:
 ## Configurazione .env
 
 Parti da `.env.example` e imposta almeno:
+
+```cmd
+copy .env.example .env
+```
 
 ```env
 INSTAGRAM_ACCESS_TOKEN=IGAANBqYCsRBtBZAGJ6UDhsZATQ2N3l6QmYzdHJoOUtLSkkxN2ZApZAVA3TW02TTV2ekViY0FBX05IdlhpdEVxdkUyRXRZAcE1HS1FTcFAzQklHQkVZATHNBandTS1F2TFZAvV0x1bEZAFYTNrSWdlOHRQclBwdm9uanV4ZA0VEcTBxNlp4ZAwZDZD
@@ -101,6 +105,11 @@ Per le regole complete: vedi `CONTRIBUTING.md`.
 
 - Il backend usa store locale in memoria per sviluppo rapido.
 - Se usi OneDrive e noti problemi con `.venv`, sposta il progetto fuori da OneDrive.
+- Se appare warning su `VIRTUAL_ENV` non allineato al progetto, il terminale sta puntando a una `.venv` di un altro workspace.
+- Apri un terminale nuovo nella root del progetto e lancia `uv sync`.
+- Per forzare l'ambiente attivo corrente usa `uv run --active ...` (solo se sei sicuro di avere attivato la `.venv` giusta).
+- Per evitare watch troppo ampio con hot-reload, usa sempre `--reload-dir backend`.
+- Se `GET /api/profile` restituisce `503 Service Unavailable`, nella pratica mancano variabili `.env` (soprattutto `INSTAGRAM_ACCESS_TOKEN`) oppure il token non e valido/scaduto.
 - Comando cache uv:
 
 ```cmd

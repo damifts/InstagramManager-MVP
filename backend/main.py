@@ -44,6 +44,17 @@ class PayloadPubblicaMedia(BaseModel):
 def errore_servizio() -> None:
     raise HTTPException(status_code=503, detail="Servizio non disponibile")
 
+
+def valida_risultato(result: dict | None) -> dict:
+    if not result:
+        errore_servizio()
+    if isinstance(result, dict) and result.get("_error"):
+        raise HTTPException(
+            status_code=int(result.get("status_code", 503)),
+            detail=str(result.get("detail", "Errore servizio Instagram")),
+        )
+    return result
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origini_cors(),
@@ -60,24 +71,19 @@ def health_check() -> dict:
 
 @app.get("/api/")
 @app.get("/api/profile")
+@app.get("/profile")
 def profilo_instagram():
     result = profilo_instagram_api()
-    if not result:
-        errore_servizio()
-    return result
+    return valida_risultato(result)
 
 
 @app.post("/api/createPost")
 def crea_media_instagram(payload: PayloadCreaMedia):
     result = crea_media_instagram_api(payload.url_risorsa, payload.caption, payload.user_id)
-    if not result:
-        errore_servizio()
-    return result
+    return valida_risultato(result)
 
 
 @app.post("/api/PostMedia")
 def pubblica_media_instagram(payload: PayloadPubblicaMedia):
     result = pubblica_media_instagram_api(payload.user_id, payload.creation_id)
-    if not result:
-        errore_servizio()
-    return result
+    return valida_risultato(result)
